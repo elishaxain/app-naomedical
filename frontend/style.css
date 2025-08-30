@@ -1,0 +1,112 @@
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; width: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body {
+  background: linear-gradient(135deg, #0f1724, #08122a);
+  color: #e6eef8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+header {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+header h2 { font-size: 20px; color: #9fb4ff; }
+
+/* Main content */
+.main-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: calc(100% - 50px);
+}
+
+/* Chat container */
+.chat-container {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  gap: 8px;
+  background: #071426;
+}
+
+.message {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.user { background: #0b3b57; color: #fff; align-self: flex-end; border-bottom-right-radius: 2px; }
+.system { background: rgba(255,255,255,0.05); color: #e6eef8; align-self: flex-start; border-bottom-left-radius: 2px; }
+
+/* Controls sticky at bottom */
+.controls {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #0b1220;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  flex-shrink: 0;
+}
+
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.03);
+  background: #0b1220;
+  color: #e6eef8;
+  font-size: 14px;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #0b3b57;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover { background: #134a7a; }
+
+audio { width: 100%; margin-top: 10px; }
+
+/* Desktop: chat left, controls right */
+@media (min-width: 769px) {
+  .main-content {
+    flex-direction: row;
+  }
+  .chat-container { flex: 2; border-right: 1px solid rgba(255,255,255,0.05); height: auto; }
+  .controls { flex: 1; border-top: none; }
+}
+
+/* Mobile: chat top, controls bottom, full screen */
+@media (max-width: 768px) {
+  .main-content { flex-direction: column; }
+  .chat-container { flex: 1; min-height: 0; }
+  .controls { flex-shrink: 0; }
+}

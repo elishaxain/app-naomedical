@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NaoMedical Translator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h2>NaoMedical Translator</h2>
+    </header>
+
+    <div class="main-content">
+      <div class="chat-container" id="chatContainer"></div>
+
+      <div class="controls">
+        <label>🎤 Speak in:</label>
+        <select id="inputLang">
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+          <option value="fr">French</option>
+          <option value="de">German</option>
+          <option value="ur">Urdu</option>
+        </select>
+
+        <label>🌍 Translate to:</label>
+        <select id="targetLang">
+          <option value="es">Spanish</option>
+          <option value="en">English</option>
+          <option value="fr">French</option>
+          <option value="de">German</option>
+          <option value="ur">Urdu</option>
+        </select>
+
+        <button id="startBtn">🎤 Speak</button>
+        <audio id="audioPlayer" controls></audio>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
